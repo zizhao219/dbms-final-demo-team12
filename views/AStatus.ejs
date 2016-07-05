@@ -1,0 +1,101 @@
+<% include ./header %>
+
+<header class="intro-header" style="background-image: url('/images/導覽.jpg')">
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                   <div class="post-heading">
+                       <h1>Account and Case</h1>
+                         <span class="subheading">Change your password & check the cases </span>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </header>
+
+   <!-- Post Content -->
+
+       <div class="container">
+
+           <div class="row">
+               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                 <li>
+                   Account <%= status.account %>
+                 </li>
+                 <li>
+                   Password <%= status.password %>
+                 </li>
+                 <div data-role="main" class="ui-content">
+                     <div data-role="collapsible">
+                       <h1>Password Change</h1>
+
+
+
+                 <form name="sentMessage" action="/AStatus" method="POST" id="contactForm" novalidate>
+
+                 <fieldset>
+
+                     <p>Password: <input title="Password" type="password"  name="pwd1" onchange="
+               this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+               if(this.checkValidity()) form.pwd2.pattern = this.value;
+               "></p>
+               <p>Confirm Password: <input title=" enter the same Password as above" type="password"  name="pwd2" onchange="
+               this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+               "></p>
+
+
+                     <p><button type="submit" name="change" value="<%=status.id%>" class="pure-button pure-button-primary">Confirm</button></p>
+                 </fieldset>
+
+                     </form>
+          </div>
+                   </div>
+
+               <HR><h1>
+                 Case Status
+               </h1>
+             </HR>
+                 <%if(casename){%>
+                   <HR>
+                   <%casename.forEach(function(Acase){%>
+                      <%if(Acase.statu==0){%>
+                        <h3>
+                          Case Name <%= Acase.CName %>
+                        </h3>
+                        <h3>
+                          HR <%= Acase.HR %>
+                        </h3>
+                        <h3>
+                          Status: Waiting
+                        </h3>
+                         <hr></hr>
+                        <%}%>
+                         <%});%>
+                      </HR>
+                      <HR>
+                        <%casename.forEach(function(Acase){%>
+                           <%if(Acase.statu==1){%>
+
+                             <h3>
+                               Case Name <%= Acase.CName %>
+                             </h3>
+                             <h3>
+                               HR <%= Acase.HR %>
+                             </h3>
+                             <h3>
+                               Status: Finshed
+                             </h3>
+                             <hr></hr>
+                             <%}%>
+                     <%});%>
+                   </HR>
+                   <%}%>
+                 </li>
+               </div>
+           </div>
+
+       </div>
+
+   <hr>
+<% include ./footer %>

@@ -1,0 +1,55 @@
+<% include ./header %>
+
+<header class="intro-header" style="background-image: url('/images/post-bg.jpg')">
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                   <div class="post-heading">
+                       <h1>Information of cases</h1>
+
+                   </div>
+               </div>
+           </div>
+       </div>
+   </header>
+
+   <!-- Post Content -->
+
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                 <%if(caselist){%>
+                   <% caselist.forEach(function(Case){%>
+                   <div class="post-preview">
+
+                           <h2 class="post-title">
+                             Name:<%= Case.CName %>
+                           </h2>
+                           <h3>
+                             Date:<%= Case.Date_1 %>
+                           </h3>
+                           <h3>
+                             Time:<%= Case.Time %>
+                           </h3>
+                           <h3>
+                             HR:<%= Case.HR %>
+                           </h3>
+                           <h3>
+                             Week:<%= Case.Week %>
+                           </h3>
+                           <h3>
+                             Description:<%= Case.Description %>
+                           </h3>
+                       </a>
+
+                   </div>
+                   <hr>
+             <%  }); %>
+               <%}%>
+               </div>
+           </div>
+       </div>
+
+
+   <hr>
+<% include ./footer %>

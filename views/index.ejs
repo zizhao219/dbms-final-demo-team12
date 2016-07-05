@@ -1,0 +1,64 @@
+<% include ./header %>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('./images/ba.png')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>NCCU &nbsp;PILOT</h1>
+
+                        <span class="subheading">----政大引水人課團對對系統----</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                <% caseist.forEach(function(Case) { %>
+
+                        <div class="post-preview">
+                            <a href="/caseshow/<%= Case.CID %>">
+                                <h2 class="post-title">
+                                  Name:<%= Case.CName %>
+                                </h2>
+                                </a>
+                                <h3 class="post-subtitle">
+                                  Date:<%= Case.Date_1 %>
+                                </h3>
+                                <h3 class="post-subtitle">
+                                  Time:<%= Case.Time %>
+                                </h3>
+                                <h3 class="post-subtitle">
+                                  HR:<%= Case.HR %>
+                                </h3>
+                                <h3 class="post-subtitle">
+                                  Week:<%= Case.Week %>
+                                </h3>
+                                <h3 class="post-subtitle">
+                                  Description:<%= Case.Description %>
+                                </h3>
+
+
+                        </div>
+
+                      <hr>
+                <%  }); %>
+
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#">Older Posts &rarr;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <% include ./footer %>

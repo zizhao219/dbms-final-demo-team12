@@ -1,0 +1,90 @@
+<% include ./header %>
+
+<header class="intro-header" style="background-image: url('/images/旗袍（活動中）.jpg')">
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                   <div class="post-heading">
+                       <h1>Qualify</h1>
+                      <span class="subheading">Approve the cases!</span>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </header>
+
+   <!-- Post Content -->
+
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                   <div class="post-preview">
+
+                    <h2 class="h2-color ">待核准的接團要求：</h2>
+                     <%if(global.member){%>
+                     <%if(result){%>
+                       <%result.forEach(function(re){%>
+                         <% if(re.relist.statu == 0){%>
+                     <h3 class="post-title">
+                         Case Name:<%= re.relist.CName %>
+                     </h3>
+                     <h4>
+                      Case HR:<%= re.relist.HR %>
+                     </h4>
+                     <h4>
+                      Student Name:<%= re.relist.SID %>
+                     </h4>
+                     <h4>
+                      Student Name:<%= re.relist.Name %>
+                     </h4>
+                     <h4>
+                       Qualify?: NO
+                     </h4>
+            <form name="sentMessage" action="/StudentCase" method="POST" id="contactForm" novalidate>
+          <div class="row">
+          <div class="form-group col-xs-12">
+            <input type ="hidden" name ="q1" value ="<%= re.relist.CID%>" >
+        <button type="submit" class="btn btn-default" name="q2" value ="<%= re.relist.SID%>">Qualify</button>
+                  </div>
+                </div>
+                </form>
+                <hr>
+                 <%}%>
+                  <% }); %>
+              
+
+                   <p>=================================================================</p>
+                       <h2 clasee="h2-color"> 已核准的接團要求：</h2>
+                      <%result.forEach(function(re){%>
+
+                     <%if(re.relist.statu == 1){%>
+
+
+                       <h3 class="post-title">
+                           Case Name:<%= re.relist.CName %>
+                       </h3>
+                       <h4>
+                        Case HR:<%= re.relist.HR %>
+                       </h4>
+                       <h4>
+                        Student Name:<%= re.relist.SID %>
+                       </h4>
+                       <h4>
+                        Student Name:<%= re.relist.Name %>
+                       </h4>
+                       <h4>
+                         Qualify?: Yes
+                       </h4>
+                       <hr>
+
+                       <%}%>
+             <%  }); %>
+               <%}}%>
+               </div>
+           </div>
+       </div>
+
+
+   <hr>
+<% include ./footer %>

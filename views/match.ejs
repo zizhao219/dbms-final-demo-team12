@@ -1,0 +1,48 @@
+<% include ./header %>
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('./images/導覽.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h1>Match</h1>
+                    <span class="subheading">Find Members Having Free Time!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 col-md-10 col-md-offset-1">
+
+            <form name="sentMessage" action="/match/matched" method="POST" id="contactForm" novalidate>
+
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type ="checkbox" name = "mon9" >Mon 9~12 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type ="checkbox" name = "mon13" >Mon 13~17<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type ="checkbox" name = "tue9" >Tue 9~12 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type ="checkbox" name = "tue13" >Tue 13~17<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type ="checkbox" name = "wed9" >Wed 9~12 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type ="checkbox" name = "wed13" >Wed 13~17<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type ="checkbox" name = "thu9" >Thu 9~12 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type ="checkbox" name = "thu13" >Thu 13~17<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type ="checkbox" name = "fri9" >Fri 9~12 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type ="checkbox" name = "fri913" >Fri 13~17<br>
+                <div id="success"></div>
+                <div class="row">
+                    <div class="form-group col-lg-4 col-lg-offset-4 col-xs-12">
+
+                        <br>
+                        <button type="submit" class="btn btn-default">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<hr>
+<% include ./footer %>

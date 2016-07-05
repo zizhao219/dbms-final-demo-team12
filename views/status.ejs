@@ -1,0 +1,116 @@
+<% include ./header %>
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('./images/旗袍.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h1>Fill&nbsp; Personal&nbsp;Information</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <h2>Status</h2>
+            <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+            <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+            <!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+            <form name="sentMessage" action="/status" method="POST" id="contactForm" novalidate>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>SID</label>
+                        <input type="text" class="form-control" placeholder="SID" id="SID" name="SID" maxlength="9" required data-validation-required-message="Please enter your name.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Name</label>
+                        <input type="text" class="form-control" placeholder="Name" id="Name" name="Name" maxlength="10" required data-validation-required-message="Please enter your account.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Department</label>
+                        <input type="text" class="form-control" placeholder="Department" id="Department" name="Department" maxlength="10" required data-validation-required-message="Please enter your password.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                      <li>Grade</li>
+                      <select name="Grade">
+                        <option value ="一">一</option>
+                        <option value ="二">二</option>
+                        <option value ="三">三</option>
+                        <option value ="四">四</option>
+                        <option value ="五">五</option>
+                        <option value ="六">六</option>
+
+                      </select>
+
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+
+                        <li>Sex</li>
+                        <select name="Sex">
+                          <option value ="男">男</option>
+                          <option value ="女">女</option>
+                          <option value ="X">X</option>
+
+                        </select>
+
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Phone</label>
+                        <input type="text" class="form-control" placeholder="Phone" id="Phone" name="Phone" maxlength="10" required data-validation-required-message="Please enter your password.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Email</label>
+                        <input type="text" class="form-control" placeholder="Email" id="Email" name="Email" maxlength="40" required data-validation-required-message="Please enter your password.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <h2> On Class with check </h2>
+                <br>
+                <input type ="checkbox" name = "mon9" >Mon 9~12<br>
+                <input type ="checkbox" name = "mon13" >Mon 13~17<br>
+                <input type ="checkbox" name = "tue9" >Tue 9~12<br>
+                <input type ="checkbox" name = "tue13" >Tue 13~17<br>
+                <input type ="checkbox" name = "wed9" >Wed 9~12<br>
+                <input type ="checkbox" name = "wed13" >Wed 13~17<br>
+                <input type ="checkbox" name = "thu9" >Thu 9~12<br>
+                <input type ="checkbox" name = "thu13" >Thu 13~17<br>
+                <input type ="checkbox" name = "fri9" >Fri 9~12<br>
+                <input type ="checkbox" name = "fri913" >Fri 13~17<br>
+                <div id="success"></div>
+
+                <div class="row">
+                    <div class="form-group col-xs-12">
+                      <br>
+                        <button type="submit" class="btn btn-default">Send</button>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<hr>
+<% include ./footer %>

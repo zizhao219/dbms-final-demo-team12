@@ -1,0 +1,63 @@
+<% include ./header %>
+
+<header class="intro-header" style="background-image: url('/images/旗袍.jpg')">
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                   <div class="post-heading">
+                         <h1>Information of Cases</h1>
+                       <%# <h2 class="subheading">Problems look mighty small from 150 miles up</h2>%>
+
+                   </div>
+               </div>
+           </div>
+       </div>
+   </header>
+
+   <!-- Post Content -->
+   <article>
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                 <h1>Name:<%= cased.CName %></h1>
+                  <h3>
+                    Date:<%= cased.Date_1 %>
+                  </h3>
+                  <h3>
+                    Time:<%= cased.Time %>
+                  </h3>
+                  <h3>
+                    HR:<%= cased.HR %>
+                  </h3>
+                  <h3>
+                    Week:<%= cased.Week %>
+                  </h3>
+                  <h3>
+                    Description:<%= cased.Description %>
+                  </h3>
+               </div>
+           </div>
+       </div>
+       <%if(member){%>
+       <form calss="form-inline" name="sentMessage" action="/getcase" method="POST" id="contactForm" novalidate>
+     <div class="row">
+         <div class="col-lg-4 col-lg-offset-6 col-md-10 col-md-offset-1">
+             <button type="submit" class="btn btn-default" name="take" value ="<%= cased.CID%>" >GetCase</button>
+
+
+           <%}%>
+       <%if(global.member){%>
+
+
+
+                 <button type="submit" class="btn btn-default" name="d" value ="<%= cased.CID%>" >Delete</button>
+             </div>
+               </form>
+            <%}%>
+
+
+   </article>
+
+   <hr>
+<% include ./footer %>

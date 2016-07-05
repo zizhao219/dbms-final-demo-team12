@@ -1,0 +1,85 @@
+   <% include ./header %>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('./images/旗袍.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>Search &nbsp; Resultss</h1>
+                        <hr class="small">
+                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+              <% if(target!=undefined){%>
+                <% if(target==0){%>
+                  <li>
+                    <h3 class="post-subtitle">
+                      Not Found
+                    </h3>
+                  </li>
+
+                <% } %>
+
+              <% if(result!=undefined){%>
+
+                <% result.forEach(function(Case) { %>
+                      <div class="post-preview">
+                          <a href="/caseshow/<%= Case.CID %>">
+                              <h3 class="post-title">
+                              Name: <%= Case.CName %>
+                            </h3>
+                              </a>
+                              <h3 class="post-subtitle">
+                                Date:<%= Case.Date_1 %>
+                              </h3>
+                              <h3 class="post-subtitle">
+                                Time:<%= Case.Time %>
+                              </h3>
+                              <h3 class="post-subtitle">
+                              Week: <%= Case.Week %>
+                              </h3>
+                              <h3 class="post-subtitle">
+                                Description:<%= Case.Description %>
+                              </h3>
+
+
+                      </div>
+                      <hr>
+                <%  }); %>
+
+
+                  <%}}%>
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#">Older Posts &rarr;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <% include ./footer %>

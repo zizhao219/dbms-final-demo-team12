@@ -1,0 +1,142 @@
+<% include ./header %>
+
+<header class="intro-header" style="background-image: url('/images/旗袍.jpg')">
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                   <div class="post-heading">
+                       <h1>Member Information</h1>
+                       <span class="subheading">Members Who have free time.</span>
+
+                   </div>
+               </div>
+           </div>
+       </div>
+   </header>
+
+   <!-- Post Content -->
+
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                 <%if(rowlist){%>
+                   <%if(rowlist.length==0){%>
+                     <h2 class="post-title">
+                       NO People
+                     </h2>
+                  <% } else {%>
+                  <%for(;rowlist.length!=0;){%>
+                   <div class="post-preview">
+                      <% var sth =rowlist.pop()%>
+                           <h2 class="post-title">
+                             SID:<%= sth[0].SID %>
+                           </h2>
+                           <h4>
+                             Name:<%= sth[0].Name %>
+                           </h4>
+                           <h4>
+                             Department:<%= sth[0].Department %>
+                           </h4>
+                           <h4>
+                             Phone:<%= sth[0].Phone %>
+                           </h4>
+                           <h4>
+                             Email:<%= sth[0].Email %>
+                           </h4>
+                       </a>
+                       <div class="post-preview">
+                         <table class="table table-bordered">
+                            <tr>
+                              <th></th>
+                              <th>Mon.</th>
+                              <th>Tue.</th>
+                              <th>Wed.</th>
+                              <th>Thu.</th>
+                              <th>Fri</th>
+                           </tr>
+                           <tr>
+                              <th>9:00~12:00</th>
+
+                         <% if(sth[0].Mon_9_12==1){%>
+                           <th>✓</th>
+
+                         <%} else{%>
+                           <th></th>
+                           <%}%>
+                         <% if(sth[0].Tue_9_12 ==1){%>
+                           <th>✓</th>
+                           <%} else{%>
+                            <th></th>
+
+                        <%}%>
+                        <% if(sth[0].Wed_9_12 ==1){%>
+                          <th>✓</th>
+                          <%} else{%>
+                            <th></th>
+
+                        <%}%>
+                        <% if(sth[0].Thu_9_12 ==1){%>
+                          <th>✓</th>
+                          <%} else{%>
+                            <th></th>
+
+                        <%}%>
+                        <% if(sth[0].Fri_9_12 ==1){%>
+                          <th>✓</th>
+                          <%} else{%>
+                          <th></th>
+
+                        <%}%>
+
+                        </tr>
+                        <tr>
+                           <th>13:00~17:00</th>
+
+
+                         <% if(sth[0].Mon_13_17 ==1){%>
+                           <th>✓</th>
+                           <%} else{%>
+                             <th></th>
+
+                          <%}%>
+                         <% if(sth[0].Tue_13_17==1){%>
+                           <th>✓</th>
+                           <%} else{%>
+                             <th></th>
+
+                         <%}%>
+                         <% if(sth[0].Wed_13_17==1){%>
+                           <th>✓</th>
+                           <%} else{%>
+                             <th></th>
+
+                         <%}%>
+                         <% if(sth[0].Thu_13_17==1){%>
+                           <th>✓</th>
+                           <%} else{%>
+                             <th></th>
+                         <%}%>
+                         <% if(sth[0].Fri_13_17==1){%>
+                           <th>✓</th>
+                           <%} else{%>
+                             <th></th>
+                             <%}%>
+                       </tr>
+                       </table>
+                         </div>
+                   </div>
+                   <hr>
+                  <%}%>
+               <%}%>
+               <%} else{%>
+                 <h2 class="post-title">
+                   NO People
+                 </h2>
+                 <%}%>
+               </div>
+           </div>
+       </div>
+
+
+   <hr>
+<% include ./footer %>

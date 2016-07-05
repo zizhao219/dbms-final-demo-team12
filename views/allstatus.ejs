@@ -1,0 +1,54 @@
+<% include ./header %>
+
+<header class="intro-header" style="background-image: url('/images/旗袍.jpg')">
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                   <div class="post-heading">
+                       <h1>All &nbsp;Members' &nbsp;Status</h1>
+
+                   </div>
+               </div>
+           </div>
+       </div>
+   </header>
+
+   <!-- Post Content -->
+
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                 <%if(global.member){%>
+                 <%if(statuslist){%>
+                   <%statuslist.forEach(function(status){%>
+                   <div class="post-preview">
+
+                     <h2 class="post-title">
+                         SID:<%= status.SID %>
+                     </h2>
+                     <h3>
+                       Name:<%= status.Name %>
+                     </h3>
+                     <h3>
+                       Department:<%= status.Department %>
+                     </h3>
+                     <h3>
+                       Phone:<%= status.Phone %>
+                     </h3>
+                     <h3>
+                      Email: <%= status.Email %>
+                    </h3>
+                     <h3>
+                      MyHr: <%= status.myhr %>
+                    </h3>
+                   </div>
+                   <hr>
+             <%  }); %>
+               <%}}%>
+               </div>
+           </div>
+       </div>
+
+
+   <hr>
+<% include ./footer %>
